@@ -1,4 +1,4 @@
-<h1>I don't want to copy the color and font in each time when I am doing frontend mentor exercise :></h1>
+<h1>I don't want to copy the color and font value every time when I am doing frontend mentor exercises :></h1>
 
 So I make it.
 
