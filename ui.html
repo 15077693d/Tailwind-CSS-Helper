@@ -1,10 +1,10 @@
-<h2>Tailwind helper</h2>
+<h2>Tailwind CSS Helper</h2>
 <button id="export">export</button>
 <script>
   function downloadObjectAsJson(exportObj, exportName) {
     var dataStr =
       "data:text/json;charset=utf-8," +
-      encodeURIComponent(JSON.stringify(exportObj));
+      encodeURIComponent(JSON.stringify(exportObj, null, 4));
     var downloadAnchorNode = document.createElement("a");
     downloadAnchorNode.setAttribute("href", dataStr);
     downloadAnchorNode.setAttribute("download", exportName + ".json");
@@ -16,7 +16,7 @@
     const data = msg.data.pluginMessage;
     if (data.type == "stylesInJson") {
       const stylesInJson = data.stylesInJson;
-      downloadObjectAsJson(stylesInJson, "test");
+      downloadObjectAsJson(stylesInJson, "tailwindCSSHelper");
     }
   };
   document.getElementById("export").onclick = () => {
