@@ -1,4 +1,8 @@
 # Tailwind CSS Helper (Figma Plugin)
+
+if you have any questions about it, please leave it in issues.
+
+
 ![Group 6](https://user-images.githubusercontent.com/51513183/193633024-26b68d93-6e1b-4148-bf45-949ec580f746.png)
 ## Motivation
 
