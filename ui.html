@@ -1,17 +1,25 @@
-<h2>2Json</h2>
-<button id="color">Create color Json</button>
-<button id="font">Create font Json</button>
+<h2>Tailwind helper</h2>
+<button id="export">export</button>
 <script>
-  document.getElementById("create").onclick = () => {
-    const textbox = document.getElementById("count");
-    const count = parseInt(textbox.value, 10);
-    parent.postMessage(
-      { pluginMessage: { type: "create-rectangles", count } },
-      "*"
-    );
+  function downloadObjectAsJson(exportObj, exportName) {
+    var dataStr =
+      "data:text/json;charset=utf-8," +
+      encodeURIComponent(JSON.stringify(exportObj));
+    var downloadAnchorNode = document.createElement("a");
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", exportName + ".json");
+    document.body.appendChild(downloadAnchorNode); // required for firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  }
+  window.onmessage = (msg) => {
+    const data = msg.data.pluginMessage;
+    if (data.type == "stylesInJson") {
+      const stylesInJson = data.stylesInJson;
+      downloadObjectAsJson(stylesInJson, "test");
+    }
   };
-
-  document.getElementById("cancel").onclick = () => {
-    parent.postMessage({ pluginMessage: { type: "cancel" } }, "*");
+  document.getElementById("export").onclick = () => {
+    parent.postMessage({ pluginMessage: { type: "export" } }, "*");
   };
 </script>
