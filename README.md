@@ -1,6 +1,7 @@
 # Tailwind CSS Helper (Figma Plugin)
-
+![Group 6](https://user-images.githubusercontent.com/51513183/193633024-26b68d93-6e1b-4148-bf45-949ec580f746.png)
 ## Motivation
+
 I want to skip the copy and paste process when I update the text and color styles in tailwind.config.js .
 
 ## Json Output Example
