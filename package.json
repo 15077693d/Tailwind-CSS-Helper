@@ -1,7 +1,7 @@
 {
-  "name": "2Json",
-  "version": "1.0.0",
-  "description": "Your Figma Plugin",
+  "name": "Tailwind CSS Helper",
+  "version": "1.0.1",
+  "description": "Tailwind CSS Helper",
   "main": "code.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",

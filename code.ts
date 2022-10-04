@@ -74,7 +74,7 @@ function createPaintStylesData(): {
     /** @todo Add support to GradientPaint | ImagePaint */
     const { r, g, b } = (paintStyle.paints[0] as SolidPaint).color;
     /** @todo Add support custom name */
-    paintStylesData[paintStyle.name] = rgbToHex(r, g, b);
+    paintStylesData[paintStyle.name] = rgbToHex(r, g, b).toLocaleUpperCase();
   });
   return paintStylesData;
 }
