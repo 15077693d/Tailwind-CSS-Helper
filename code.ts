@@ -71,10 +71,12 @@ function createPaintStylesData(): {
   const paintStylesInTheme = figma.getLocalPaintStyles();
   const paintStylesData: { [id in string]: string } = {};
   paintStylesInTheme.map((paintStyle) => {
-    /** @todo Add support to GradientPaint | ImagePaint */
-    const { r, g, b } = (paintStyle.paints[0] as SolidPaint).color;
-    /** @todo Add support custom name */
-    paintStylesData[paintStyle.name] = rgbToHex(r, g, b).toLocaleUpperCase();
+    if (paintStyle.paints[0].type === "SOLID") {
+      /** @todo Add support to GradientPaint | ImagePaint */
+      const { r, g, b } = (paintStyle.paints[0] as SolidPaint).color;
+      /** @todo Add support custom name */
+      paintStylesData[paintStyle.name] = rgbToHex(r, g, b).toLocaleUpperCase();
+    }
   });
   return paintStylesData;
 }
